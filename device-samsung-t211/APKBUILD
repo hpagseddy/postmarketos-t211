@@ -1,0 +1,22 @@
+# Reference: <https://postmarketos.org/devicepkg>
+pkgname="device-samsung-t211"
+pkgdesc="Samsung Galaxy Tab 3.7"
+pkgver=0.1
+pkgrel=0
+url="https://postmarketos.org"
+license="MIT"
+arch="noarch"
+options="!check"
+depends="postmarketos-base linux-samsung-t211 mkbootimg mesa-dri-swrast"
+makedepends="devicepkg-dev"
+source="deviceinfo"
+
+build() {
+	devicepkg_build $startdir $pkgname
+}
+
+package() {
+	devicepkg_package $startdir $pkgname
+}
+
+sha512sums="ae7c2b44e57078f2c359bc4de07f467e5f42e1c4eed2162ce5cbb5a1a15fa5d2c1b6cd3d2c68b3b550fc51f80301075565d1af3691f864320e3b45cb56ba2316  deviceinfo"
